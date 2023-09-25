@@ -1,0 +1,9 @@
+name: "run tagref"
+description: "Runs tagref to check that all references are valid and there are no unreferenced tags"
+author: "Giacomo Cavalieri"
+branding:
+  icon: "paperclip"
+  color: "gray-dark"
+runs:
+  using: "docker"
+  image: "Dockerfile"
