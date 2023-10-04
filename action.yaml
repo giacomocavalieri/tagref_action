@@ -1,9 +1,21 @@
 name: "run tagref"
+
 description: "Runs tagref to check that all references are valid and there are no unreferenced tags"
+
 author: "Giacomo Cavalieri"
+
 branding:
   icon: "paperclip"
   color: "gray-dark"
+
+inputs:
+  unused-tags:
+    description: "This can either be `allow` (to allow unreferenced tags) or `forbid` (to fail CI if there are tags that are not referenced by a reference)"
+    required: false
+    default: "forbid"
+
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.unused_tags }}
